@@ -1,0 +1,20 @@
+.modal-container {
+  width: 600px;
+  border: 1px solid white;
+  border-radius: 1rem;
+  padding: 1rem;
+  background: red;
+  color: white !important;
+  .modal-header {
+    width: 100%;
+    border: 1px solid white;
+  }
+  .modal-body {
+    width: 100%;
+    border: 1px solid white;
+  }
+  .modal-footer {
+    width: 100%;
+    border: 1px solid white;
+  }
+}

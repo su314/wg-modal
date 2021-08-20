@@ -5,6 +5,7 @@
  * It contains typing information for all components that exist in this project.
  */
 import { HTMLStencilElement, JSXBase } from "@stencil/core/internal";
+import { modal, modalBody, modalFooter, modalHeader } from "./entity/modal";
 export namespace Components {
     interface MyComponent {
         /**
@@ -20,6 +21,18 @@ export namespace Components {
          */
         "middle": string;
     }
+    interface WgModal {
+        "modalData": modal;
+    }
+    interface WgModalBody {
+        "modalBody": modalBody;
+    }
+    interface WgModalFooter {
+        "modalFooter": modalFooter;
+    }
+    interface WgModalHeader {
+        "modalHeader": modalHeader;
+    }
 }
 declare global {
     interface HTMLMyComponentElement extends Components.MyComponent, HTMLStencilElement {
@@ -28,8 +41,36 @@ declare global {
         prototype: HTMLMyComponentElement;
         new (): HTMLMyComponentElement;
     };
+    interface HTMLWgModalElement extends Components.WgModal, HTMLStencilElement {
+    }
+    var HTMLWgModalElement: {
+        prototype: HTMLWgModalElement;
+        new (): HTMLWgModalElement;
+    };
+    interface HTMLWgModalBodyElement extends Components.WgModalBody, HTMLStencilElement {
+    }
+    var HTMLWgModalBodyElement: {
+        prototype: HTMLWgModalBodyElement;
+        new (): HTMLWgModalBodyElement;
+    };
+    interface HTMLWgModalFooterElement extends Components.WgModalFooter, HTMLStencilElement {
+    }
+    var HTMLWgModalFooterElement: {
+        prototype: HTMLWgModalFooterElement;
+        new (): HTMLWgModalFooterElement;
+    };
+    interface HTMLWgModalHeaderElement extends Components.WgModalHeader, HTMLStencilElement {
+    }
+    var HTMLWgModalHeaderElement: {
+        prototype: HTMLWgModalHeaderElement;
+        new (): HTMLWgModalHeaderElement;
+    };
     interface HTMLElementTagNameMap {
         "my-component": HTMLMyComponentElement;
+        "wg-modal": HTMLWgModalElement;
+        "wg-modal-body": HTMLWgModalBodyElement;
+        "wg-modal-footer": HTMLWgModalFooterElement;
+        "wg-modal-header": HTMLWgModalHeaderElement;
     }
 }
 declare namespace LocalJSX {
@@ -47,8 +88,24 @@ declare namespace LocalJSX {
          */
         "middle"?: string;
     }
+    interface WgModal {
+        "modalData"?: modal;
+    }
+    interface WgModalBody {
+        "modalBody"?: modalBody;
+    }
+    interface WgModalFooter {
+        "modalFooter"?: modalFooter;
+    }
+    interface WgModalHeader {
+        "modalHeader"?: modalHeader;
+    }
     interface IntrinsicElements {
         "my-component": MyComponent;
+        "wg-modal": WgModal;
+        "wg-modal-body": WgModalBody;
+        "wg-modal-footer": WgModalFooter;
+        "wg-modal-header": WgModalHeader;
     }
 }
 export { LocalJSX as JSX };
@@ -56,6 +113,10 @@ declare module "@stencil/core" {
     export namespace JSX {
         interface IntrinsicElements {
             "my-component": LocalJSX.MyComponent & JSXBase.HTMLAttributes<HTMLMyComponentElement>;
+            "wg-modal": LocalJSX.WgModal & JSXBase.HTMLAttributes<HTMLWgModalElement>;
+            "wg-modal-body": LocalJSX.WgModalBody & JSXBase.HTMLAttributes<HTMLWgModalBodyElement>;
+            "wg-modal-footer": LocalJSX.WgModalFooter & JSXBase.HTMLAttributes<HTMLWgModalFooterElement>;
+            "wg-modal-header": LocalJSX.WgModalHeader & JSXBase.HTMLAttributes<HTMLWgModalHeaderElement>;
         }
     }
 }

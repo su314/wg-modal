@@ -8,7 +8,20 @@
     <script type="module" src="/build/wg-modal.esm.js"></script>
     <script nomodule src="/build/wg-modal.js"></script>
   </head>
-  <body>
-    <my-component first="Stencil" last="'Don't call me a framework' JS"></my-component>
+  <body bgcolor="black">
+    <wg-modal></wg-modal>
   </body>
+  <script>
+    document.getElementsByTagName("wg-modal")[0].modalData={
+      modalHeader:{
+        modalHeaderText:"Header",
+      },
+      modalBody:{
+        modalBodyMessage:"Body Message",
+      },
+      modalFooter:{
+        modalFooterText:"modal Footer",
+      },
+    };
+  </script>
 </html>
